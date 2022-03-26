@@ -6,4 +6,4 @@ Alignment, Cohesion and Separation.
 More about it on my website at [Asaf's Laboratory](https://asafslaboratory.com/?p=100)
 
 
-Big thanks to [The Coding Train] for his amazing book and youtube series. 
+Big thanks to [The Coding Train](https://github.com/shiffman/thecodingtrain.com) for his amazing book and youtube series. 
