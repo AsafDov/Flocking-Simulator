@@ -4,3 +4,6 @@ This is a cool simulation for the creation of a complex system using agents that
 Alignment, Cohesion and Separation.
 
 More about it on my website at [Asaf's Laboratory](https://asafslaboratory.com/?p=100)
+
+
+Big thanks to [The Coding Train] for his amazing book and youtube series. 
