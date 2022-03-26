@@ -15,9 +15,28 @@ class Agent{
 
     // minimum space allowed for each agent with another
     this.separationDistance = 50;
+
+
+    //Scale Factor to map to color()\
+    this.alignScale = random(0,2);
+    this.coheseScale =  random(0,2);
+    this.separateScale =  random(0,2);
+
+    // Asign color
+    let red  =  map(this.alignScale, 0,2,100,255);
+    let blue  =  map(this.coheseScale, 0,2,100,255);
+    let green  =  map(this.separateScale, 0,2,100,255);
+    this.agentColor = color(red,blue,green);
+
+    // ALIVE OR DEAD
+    this.alive = true;
+
+    // How long has it lived
+    this.fitness = 0;
   }
 
   align(otherAgents){
+
     let steering = new p5.Vector(0,0);
     let total = 0;
     for(let other of otherAgents){
@@ -32,7 +51,8 @@ class Agent{
       steering.setMag(this.maxVelocity);
       steering.sub(this.velocity);
       steering.limit(this.maxSteeringForce);
-      this.acceleration.add(steering.mult(alignSlider.value()));
+
+      this.acceleration.add(steering.mult(this.alignScale));
     }
   }
 
@@ -52,7 +72,7 @@ class Agent{
       steering.setMag(this.maxVelocity);
       steering.sub(this.velocity);
       steering.limit(this.maxSteeringForce);
-      this.acceleration.add(steering.mult(cohesionSlider.value()));
+      this.acceleration.add(steering.mult(this.coheseScale));
     }
   }
 
@@ -72,7 +92,7 @@ class Agent{
         steering.setMag(this.maxVelocity);
         steering.sub(this.velocity);
         steering.limit(this.maxSteeringForce);
-        this.acceleration.add(steering.mult(separationSlider.value()));
+        this.acceleration.add(steering.mult(this.separateScale));
       }
   }
 
@@ -81,7 +101,7 @@ class Agent{
     let y = this.position.y;
 
     let theta = this.velocity.heading() + PI/2;
-    fill(30,200,10);
+    fill(this.agentColor);
     stroke(0);
     push();
     translate(x, y);
@@ -118,10 +138,19 @@ class Agent{
     }
 
     // Handle Sliders
-    this.perceptionRadius = perceptionRadiusSlider.value();
-    this.separationDistance = separationDistanceSlider.value();
+    // this.perceptionRadius = perceptionRadiusSlider.value();
+    // this.separationDistance = separationDistanceSlider.value();
 
+    // update the fittness
+    this.fitness++;
+  }
 
+  copy(){
+    let toReturn = new Agent();
+    toReturn.alignScale = this.alignScale;
+    toReturn.coheseScale = this.coheseScale;
+    toReturn.separateScale = this.separateScale;
+    return toReturn;
   }
 
 }

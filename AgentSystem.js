@@ -1,4 +1,4 @@
-class AgentSystem{
+  class AgentSystem{
 
   constructor(numOfAgents){
     this.numOfAgents = numOfAgents;
@@ -10,13 +10,17 @@ class AgentSystem{
 
   show(){
     for (let i=0; i<this.numOfAgents; i++){
-      this.agents[i].show();
+      if(this.agents[i].alive){
+        this.agents[i].show();
+      }
     }
   }
 
   update(){
     for (let i=0; i<this.numOfAgents; i++){
-      this.agents[i].update();
+      if(this.agents[i].alive){
+        this.agents[i].update();
+      }
     }
   }
 
