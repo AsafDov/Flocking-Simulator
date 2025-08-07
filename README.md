@@ -22,6 +22,7 @@ This project is a physical simulation demonstrating **emergent behavior**, a fas
 ## 🚀 Live Demo
 
 Click the picture to try for yourself
+
 [![Click to try for yourself](images/ScreenShot.png "Click to try for yourself")](https://asafdov.github.io/Flocking-Simulator/)
 
 More about it on my website at [Asaf's Laboratory](https://asafslaboratory.com/?p=100)
