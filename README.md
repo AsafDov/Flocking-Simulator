@@ -15,6 +15,7 @@ This project is a physical simulation demonstrating **emergent behavior**, a fas
 ## 🛠️ Technologies Used
 
   * **JavaScript:** The entire project is built using vanilla JavaScript, showcasing a strong understanding of core web development concepts.
+  * **p5.js:** Used for rendering and manipulation of bodies in the system
   * **HTML5:** Provides the canvas for the simulation to be rendered.
   * **CSS3:** Used for styling the user interface.
 
