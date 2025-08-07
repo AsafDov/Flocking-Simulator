@@ -1,7 +1,5 @@
 # Flocking Simulator
 
-## 💡 About the Project
-
 This project is a physical simulation demonstrating **emergent behavior**, a fascinating concept where complex, collective patterns arise from simple interactions between individual agents. The simulation models a "flocking" system, where agents (or "boids") move together based on three fundamental rules:
 
   * **Separation:** Steer to avoid crowding local flockmates.
